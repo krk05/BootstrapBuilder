@@ -29,7 +29,7 @@ o pełny kod strony HTML
 o kod zawiera tagi dołączające Bootstrapa (CDN)
 o kod zawiera tag "main" (z klasą "container") w sekcji "body"
 
-3. Jako programista mogę utworzyć szkielet strony HTML z nagłówkiem statycznym ("static") lub ustalonym ("fixed").
+3.Jako programista mogę utworzyć szkielet strony HTML z nagłówkiem statycznym ("static") lub ustalonym ("fixed").
 o pełny kod strony HTML
 o kod zawiera tagi dołączające Bootstrapa (CDN)
 o kod zawiera tag "main" (z klasą "container") w sekcji "body"
