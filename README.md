@@ -1,4 +1,6 @@
 # BootstrapBuilder
+build status : ![Build status](https://travis-ci.com/krk05/BootstrapBuilder.svg?token=3Fzqy1WJp4bjEjgBz5ud&branch=main)
+
 IO - projekt
 
 skład grupy:
