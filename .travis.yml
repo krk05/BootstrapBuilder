@@ -1,1 +1,2 @@
-language: Java 
+language: Java
+script: mvn clean spring-boot:run
