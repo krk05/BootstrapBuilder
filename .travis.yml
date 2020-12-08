@@ -1,2 +1,1 @@
 language: Java 
-script: ./mvn clean install
