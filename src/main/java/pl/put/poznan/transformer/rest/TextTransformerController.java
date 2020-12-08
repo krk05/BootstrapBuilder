@@ -22,13 +22,13 @@ public class TextTransformerController {
                       @RequestParam(value="footer", defaultValue="false") Boolean footer,
                       @RequestParam(value="title", defaultValue="title") String title,
                       @RequestParam(value="type", defaultValue="Twitter") String type,
-                      @RequestParam(value="description", defaultValue="moja strona") String description
-    )
-    {
+                      @RequestParam(value="description", defaultValue="moja strona") String description) {
 
         // log the parameters
-
-        //logger.debug(Arrays.toString(transforms));
+        logger.debug(position);
+        logger.debug(title);
+        logger.debug(type);
+        logger.debug(description);
 
         // perform the transformation, you should run your logic here, below is just a silly example
         TextTransformer transformer = new TextTransformer(header,position,footer,title,type,description);
@@ -46,8 +46,10 @@ public class TextTransformerController {
                        ) {
 
         // log the parameters
-
-        //logger.debug(Arrays.toString(transforms));
+        logger.debug(position);
+        logger.debug(title);
+        logger.debug(type);
+        logger.debug(description);
 
         // perform the transformation, you should run your logic here, below is just a silly example
         TextTransformer transformer = new TextTransformer(header,position,footer,title,type,description);

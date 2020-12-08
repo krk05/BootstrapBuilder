@@ -28,7 +28,7 @@ public class TextTransformer {
     }
 
     public String transform(){
-        // of course, normally it would do something based on the transforms
+        /* of course, normally it would do something based on the transforms */
         if(type.equals("Twitter")) return description+"\n";
         else return type;
     }
