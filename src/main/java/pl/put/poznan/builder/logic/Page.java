@@ -1,6 +1,6 @@
 package pl.put.poznan.builder.logic;
 
-public interface page {
+public interface Page {
     String poczatek();
 
     String zwykleMeta();

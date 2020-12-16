@@ -1,18 +1,18 @@
 package pl.put.poznan.builder.logic;
 
-public class metaTwitter implements page {
+public class MetaOg implements Page {
 
     String title;
     String description;
     String image;
-    String card;
+    String url;
 
-    public metaTwitter(String title, String description, String image, String card)
+    public MetaOg(String title, String description, String image, String url)
     {
         this.title = title;
         this.description = description;
         this.image = image;
-        this.card = card;
+        this.url = url;
     }
 
     @Override
@@ -27,15 +27,15 @@ public class metaTwitter implements page {
 
     @Override
     public String twitterMeta(){
-        return "<meta name=\"twitter:title\" content=" + this.title + ">\n" +
-                "<meta name=\"twitter:description\" content= " + this.description + " >\n" +
-                "<meta name=\"twitter:image\" content=" + this.image + ">\n" +
-                "<meta name=\"twitter:card\" content=" + this.card + ">";
+        return "";
     }
 
     @Override
     public String ogMeta() {
-        return "";
+        return "<meta property=\"og:title\" content=" + this.title + ">\n" +
+                "<meta property=\"og:description\" content=" + this.description + ">\n" +
+                "<meta property=\"og:image\" content=" + this.image + ">\n" +
+                "<meta property=\"og:url\" content=" + this.url + ">";
     }
 
     @Override

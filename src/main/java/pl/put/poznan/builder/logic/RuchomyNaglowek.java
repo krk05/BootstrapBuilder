@@ -1,6 +1,6 @@
 package pl.put.poznan.builder.logic;
 
-public class ruchomyNaglowek implements page {
+public class RuchomyNaglowek implements Page {
     @Override
     public String poczatek(){return ""; }
 

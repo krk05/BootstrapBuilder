@@ -4,12 +4,12 @@ public class BootstrapBuilder {
     //    public static void main(String[] args) {
 //        transform();
 //    }
-    private page a;
-    public BootstrapBuilder(page a){
+    private Page a;
+    public BootstrapBuilder(Page a){
         this.a=a;
     }
 
-    public static String wywolanie(page a)
+    public static String wywolanie(Page a)
     {
         String w = "";
         w = w + a.poczatek();

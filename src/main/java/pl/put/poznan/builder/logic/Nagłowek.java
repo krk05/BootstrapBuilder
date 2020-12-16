@@ -1,6 +1,6 @@
 package pl.put.poznan.builder.logic;
 
-public class nagłowek_ implements page {
+public class Nagłowek implements Page {
     @Override
     public String poczatek(){ return ""; }
 

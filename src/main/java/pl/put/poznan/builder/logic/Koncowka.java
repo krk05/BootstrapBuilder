@@ -1,5 +1,5 @@
 package pl.put.poznan.builder.logic;
-public class koncowka implements page {
+public class Koncowka implements Page {
     @Override
     public String poczatek(){return ""; }
 

@@ -1,6 +1,6 @@
 package pl.put.poznan.builder.logic;
 
-public class poczatek implements page {
+public class Poczatek implements Page {
     @Override
     public String poczatek(){
         String s = "<!DOCTYPE html>\n<html>\n<head>\n<link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">\n" +

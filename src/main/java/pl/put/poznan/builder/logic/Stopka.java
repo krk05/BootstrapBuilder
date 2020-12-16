@@ -1,6 +1,6 @@
 package pl.put.poznan.builder.logic;
 
-public class stopka_ implements page {
+public class Stopka implements Page {
     @Override
     public String poczatek(){return ""; }
 

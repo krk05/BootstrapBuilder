@@ -11,40 +11,17 @@ public class BootstrapBuilderController {
 
 
     public static String main(){
+
         String w = "";
-        poczatek a = new poczatek();
-        metatagi b = new metatagi("tytul", "opis", "keywords");
-        metaTwitter bb = new metaTwitter("tytul", "opis", "linkObrazek", "card");
-        metaOg bbb = new metaOg("tytul", "opis", "linkObrazek", "likUrl");
-        srodek c = new srodek();
-        nagłowek_ d = new nagłowek_();
-        ruchomyNaglowek e = new ruchomyNaglowek();
-        obiekt f = new obiekt();
-        stopka_ g = new stopka_();
-        koncowka h = new koncowka();
-
-
-        BootstrapBuilder directora=new BootstrapBuilder(a);
-        BootstrapBuilder directorb=new BootstrapBuilder(b);
-        BootstrapBuilder directorbb=new BootstrapBuilder(bb);
-        BootstrapBuilder directorbbb=new BootstrapBuilder(bbb);
-        BootstrapBuilder directorc=new BootstrapBuilder(c);
-        BootstrapBuilder directord=new BootstrapBuilder(d);
-        BootstrapBuilder directore=new BootstrapBuilder(e);
-        BootstrapBuilder directorf=new BootstrapBuilder(f);
-        BootstrapBuilder directorg=new BootstrapBuilder(g);
-        BootstrapBuilder directorh=new BootstrapBuilder(h);
-
-        w += directora.wywolanie(a);
-        w += directorb.wywolanie(b);
-        w += directorbb.wywolanie(bb);
-        w += directorbbb.wywolanie(bbb);
-        w += directorc.wywolanie(c);
-        w += directord.wywolanie(d);
-        w += directore.wywolanie(e);
-        w += directorf.wywolanie(f);
-        w += directorg.wywolanie(g);
-        w += directorh.wywolanie(h);
+        w += new BootstrapBuilder(new Poczatek()).wywolanie(new Poczatek());
+        w += new BootstrapBuilder(new Metatagi("tytul", "opis", "keywords")).wywolanie(new Metatagi("tytul", "opis", "keywords"));
+        w += new BootstrapBuilder(new MetaTwitter("tytul", "opis", "linkObrazek", "card")).wywolanie(new MetaTwitter("tytul", "opis", "linkObrazek", "card"));
+        w += new BootstrapBuilder(new MetaOg("tytul", "opis", "linkObrazek", "likUrl")).wywolanie(new MetaOg("tytul", "opis", "linkObrazek", "likUrl"));
+        w += new BootstrapBuilder(new Srodek()).wywolanie(new Srodek());
+        w += new BootstrapBuilder(new Nagłowek()).wywolanie(new Nagłowek());
+        w += new BootstrapBuilder(new RuchomyNaglowek()).wywolanie(new RuchomyNaglowek());
+        w += new BootstrapBuilder(new Obiekt()).wywolanie(new Obiekt());
+        w += new BootstrapBuilder(new Koncowka()).wywolanie(new Koncowka());
 
         return w;
 

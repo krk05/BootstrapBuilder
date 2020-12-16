@@ -1,12 +1,12 @@
 package pl.put.poznan.builder.logic;
 
-public class metatagi implements page {
+public class Metatagi implements Page {
 
     String title;
     String description;
     String keywords;
 
-    public metatagi(String title, String description, String keywords)
+    public Metatagi(String title, String description, String keywords)
     {
         this.title = title;
         this.description = description;
