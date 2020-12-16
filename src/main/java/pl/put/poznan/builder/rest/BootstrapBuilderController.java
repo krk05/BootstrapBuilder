@@ -24,8 +24,13 @@ public class BootstrapBuilderController {
         if(header=="static")
         w += new BootstrapBuilder(new Nagłowek()).wywolanie(new Nagłowek());
         if(header=="fixed")
-        w += new BootstrapBuilder(new RuchomyNaglowek()).wywolanie(new RuchomyNaglowek());
+        {
+            w += new BootstrapBuilder(new Nagłowek()).wywolanie(new Nagłowek());
+            w += new BootstrapBuilder(new RuchomyNaglowek()).wywolanie(new RuchomyNaglowek());
+        }
         w += new BootstrapBuilder(new Obiekt()).wywolanie(new Obiekt());
+        if(footer)
+        w += new BootstrapBuilder(new Stopka()).wywolanie(new Stopka());
         w += new BootstrapBuilder(new Koncowka()).wywolanie(new Koncowka());
 
         return w;
