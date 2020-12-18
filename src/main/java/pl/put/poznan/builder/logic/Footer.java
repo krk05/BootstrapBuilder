@@ -1,11 +1,11 @@
 package pl.put.poznan.builder.logic;
 
-public class Stopka implements Page {
+public class Footer implements Page {
     @Override
-    public String poczatek(){return ""; }
+    public String start(){return ""; }
 
     @Override
-    public String zwykleMeta() {
+    public String simpleMeta() {
         return "";
     }
 
@@ -20,12 +20,12 @@ public class Stopka implements Page {
     }
 
     @Override
-    public String pomiedzy() {
+    public String middle() {
         return "";
     }
 
     @Override
-    public String naglowek() {
+    public String header() {
         return "";
     }
 
@@ -34,12 +34,12 @@ public class Stopka implements Page {
         return ""; }
 
     @Override
-    public String akapit() {
+    public String paragraph() {
         return "";
     }
 
     @Override
-    public String stopka() {
+    public String footer() {
         return "<footer class=\"container-fluid bg-4 text-center\" style=\" color: white; background: #42A5F5 ;\n" +
                 "        color: white;\n" +
                 "        line-height: 50px;\n" +
@@ -49,5 +49,5 @@ public class Stopka implements Page {
     }
 
     @Override
-    public String koniec() { return ""; }
+    public String end() { return ""; }
 }

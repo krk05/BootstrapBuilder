@@ -1,12 +1,12 @@
 package pl.put.poznan.builder.logic;
 
-public class Metatagi implements Page {
+public class Metatags implements Page {
 
     String title;
     String description;
     String keywords;
 
-    public Metatagi(String title, String description, String keywords)
+    public Metatags(String title, String description, String keywords)
     {
         this.title = title;
         this.description = description;
@@ -14,12 +14,12 @@ public class Metatagi implements Page {
     }
 
     @Override
-    public String poczatek(){
+    public String start(){
         return "";
     }
 
     @Override
-    public String zwykleMeta() {
+    public String simpleMeta() {
         return "<title>" + this.title + "</title>\n" +
                 "<meta charset=\"utf-8\">\n" +
                 "<meta name=\"description\" content=\"" + this.description + "\"/>" +
@@ -38,12 +38,12 @@ public class Metatagi implements Page {
     }
 
     @Override
-    public String pomiedzy() {
+    public String middle() {
         return "";
     }
 
     @Override
-    public String naglowek() {
+    public String header() {
         return "";
     }
 
@@ -53,15 +53,15 @@ public class Metatagi implements Page {
     }
 
     @Override
-    public String akapit() {
+    public String paragraph() {
         return "";
     }
 
     @Override
-    public String stopka() {
+    public String footer() {
         return "";
     }
 
     @Override
-    public String koniec() { return ""; }
+    public String end() { return ""; }
 }

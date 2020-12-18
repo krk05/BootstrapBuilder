@@ -1,11 +1,11 @@
 package pl.put.poznan.builder.logic;
 
-public class Nagłowek implements Page {
+public class Header implements Page {
     @Override
-    public String poczatek(){ return ""; }
+    public String start(){ return ""; }
 
     @Override
-    public String zwykleMeta() {
+    public String simpleMeta() {
         return "";
     }
 
@@ -20,12 +20,12 @@ public class Nagłowek implements Page {
     }
 
     @Override
-    public String pomiedzy() {
+    public String middle() {
         return "";
     }
 
     @Override
-    public String naglowek() {
+    public String header() {
         return "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark \" id=\"myHeader\">\n" +
                 "      <a class=\"navbar-brand\" href=\"#\">Navbar</a>\n" +
                 "      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
@@ -61,15 +61,15 @@ public class Nagłowek implements Page {
     }
 
     @Override
-    public String akapit() {
+    public String paragraph() {
         return "";
     }
 
     @Override
-    public String stopka() {
+    public String footer() {
         return "";
     }
 
     @Override
-    public String koniec() { return ""; }
+    public String end() { return ""; }
 }

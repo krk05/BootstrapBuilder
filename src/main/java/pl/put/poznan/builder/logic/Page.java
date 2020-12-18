@@ -1,24 +1,24 @@
 package pl.put.poznan.builder.logic;
 
 public interface Page {
-    String poczatek();
+    String start();
 
-    String zwykleMeta();
+    String simpleMeta();
 
     String twitterMeta();
 
     String ogMeta();
 
-    String pomiedzy();
+    String middle();
 
-    String naglowek();
+    String header();
 
     String fixed();
 
-    String akapit();
+    String paragraph();
 
-    String stopka();
+    String footer();
 
-    String koniec();
+    String end();
 
 }

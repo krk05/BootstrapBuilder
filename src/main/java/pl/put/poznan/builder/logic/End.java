@@ -1,10 +1,10 @@
 package pl.put.poznan.builder.logic;
-public class Koncowka implements Page {
+public class End implements Page {
     @Override
-    public String poczatek(){return ""; }
+    public String start(){return ""; }
 
     @Override
-    public String zwykleMeta() {
+    public String simpleMeta() {
         return "";
     }
 
@@ -19,12 +19,12 @@ public class Koncowka implements Page {
     }
 
     @Override
-    public String pomiedzy() {
+    public String middle() {
         return "";
     }
 
     @Override
-    public String naglowek() {
+    public String header() {
         return "";
     }
 
@@ -33,14 +33,14 @@ public class Koncowka implements Page {
         return ""; }
 
     @Override
-    public String akapit() {return ""; }
+    public String paragraph() {return ""; }
 
     @Override
-    public String stopka() {
+    public String footer() {
         return "";
     }
 
     @Override
-    public String koniec() { return "</body>\n" +
+    public String end() { return "</body>\n" +
             "</html>"; }
 }

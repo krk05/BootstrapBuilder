@@ -1,14 +1,14 @@
 package pl.put.poznan.builder.logic;
 
-public class Srodek implements Page {
+public class Middle implements Page {
 
     @Override
-    public String poczatek(){
+    public String start(){
         return "";
     }
 
     @Override
-    public String zwykleMeta() {
+    public String simpleMeta() {
         return "";
     }
 
@@ -23,13 +23,13 @@ public class Srodek implements Page {
     }
 
     @Override
-    public String pomiedzy() {
+    public String middle() {
         String s = "</head>\n<body>\n";
         return s;
     }
 
     @Override
-    public String naglowek() {
+    public String header() {
         return "";
     }
 
@@ -39,15 +39,15 @@ public class Srodek implements Page {
     }
 
     @Override
-    public String akapit() {
+    public String paragraph() {
         return "";
     }
 
     @Override
-    public String stopka() {
+    public String footer() {
         return "";
     }
 
     @Override
-    public String koniec() { return ""; }
+    public String end() { return ""; }
 }

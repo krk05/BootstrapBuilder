@@ -1,28 +1,27 @@
 package pl.put.poznan.builder.logic;
 
 public class BootstrapBuilder {
-    //    public static void main(String[] args) {
-//        transform();
-//    }
-    private Page a;
-    public BootstrapBuilder(Page a){
-        this.a=a;
+
+    private Page builder;
+    public BootstrapBuilder(Page builder){
+
+        this.builder= builder;
     }
 
-    public static String wywolanie(Page a)
+    public static String run(Page builder)
     {
-        String w = "";
-        w = w + a.poczatek();
-        w = w + a.zwykleMeta();
-        w = w + a.twitterMeta();
-        w = w + a.ogMeta();
-        w = w + a.naglowek();
-        w = w + a.fixed();
-        w = w + a.pomiedzy();
-        w = w + a.akapit();
-        w = w + a.stopka();
-        w = w + a.koniec();
-        return w;
+        String codeText = "";
+        codeText = codeText + builder.start();
+        codeText = codeText + builder.simpleMeta();
+        codeText = codeText + builder.twitterMeta();
+        codeText = codeText + builder.ogMeta();
+        codeText = codeText + builder.header();
+        codeText = codeText + builder.fixed();
+        codeText = codeText + builder.middle();
+        codeText = codeText + builder.paragraph();
+        codeText = codeText + builder.footer();
+        codeText = codeText + builder.end();
+        return codeText;
     }
 }
 

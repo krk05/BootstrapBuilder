@@ -1,8 +1,8 @@
 package pl.put.poznan.builder.logic;
 
-public class Poczatek implements Page {
+public class Start implements Page {
     @Override
-    public String poczatek(){
+    public String start(){
         String s = "<!DOCTYPE html>\n<html>\n<head>\n<link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">\n" +
                 "<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>\n" +
                 "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script><style>\n" +
@@ -19,7 +19,7 @@ public class Poczatek implements Page {
     }
 
     @Override
-    public String zwykleMeta() {
+    public String simpleMeta() {
       return "";
     }
 
@@ -34,12 +34,12 @@ public class Poczatek implements Page {
     }
 
     @Override
-    public String pomiedzy() {
+    public String middle() {
         return "";
     }
 
     @Override
-    public String naglowek() {
+    public String header() {
         return "";
     }
 
@@ -49,15 +49,15 @@ public class Poczatek implements Page {
     }
 
     @Override
-    public String akapit() {
+    public String paragraph() {
         return "";
     }
 
     @Override
-    public String stopka() {
+    public String footer() {
         return "";
     }
 
     @Override
-    public String koniec() { return ""; }
+    public String end() { return ""; }
 }

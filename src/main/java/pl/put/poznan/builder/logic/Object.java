@@ -1,11 +1,11 @@
 package pl.put.poznan.builder.logic;
 
-public class Obiekt implements Page {
+public class Object implements Page {
     @Override
-    public String poczatek(){return ""; }
+    public String start(){return ""; }
 
     @Override
-    public String zwykleMeta() {
+    public String simpleMeta() {
         return "";
     }
 
@@ -20,12 +20,12 @@ public class Obiekt implements Page {
     }
 
     @Override
-    public String pomiedzy() {
+    public String middle() {
         return "";
     }
 
     @Override
-    public String naglowek() {
+    public String header() {
         return "";
     }
 
@@ -34,16 +34,16 @@ public class Obiekt implements Page {
         return ""; }
 
     @Override
-    public String akapit() {
+    public String paragraph() {
         return "<main>\n" +
-                "<div class=\"container\">GLOWNY AKAPIT</div></main>\n";
+                "<div class=\"container\">GLOWNY paragraph</div></main>\n";
     }
 
     @Override
-    public String stopka() {
+    public String footer() {
         return "";
     }
 
     @Override
-    public String koniec() { return ""; }
+    public String end() { return ""; }
 }

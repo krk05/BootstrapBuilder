@@ -1,11 +1,11 @@
 package pl.put.poznan.builder.logic;
 
-public class RuchomyNaglowek implements Page {
+public class FixedHeader implements Page {
     @Override
-    public String poczatek(){return ""; }
+    public String start(){return ""; }
 
     @Override
-    public String zwykleMeta() {
+    public String simpleMeta() {
         return "";
     }
 
@@ -20,12 +20,12 @@ public class RuchomyNaglowek implements Page {
     }
 
     @Override
-    public String pomiedzy() {
+    public String middle() {
         return "";
     }
 
     @Override
-    public String naglowek() {
+    public String header() {
         return "";
     }
 
@@ -48,15 +48,15 @@ public class RuchomyNaglowek implements Page {
     }
 
     @Override
-    public String akapit() {
+    public String paragraph() {
         return "";
     }
 
     @Override
-    public String stopka() {
+    public String footer() {
         return "";
     }
 
     @Override
-    public String koniec() { return ""; }
+    public String end() { return ""; }
 }
