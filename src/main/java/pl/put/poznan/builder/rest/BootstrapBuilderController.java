@@ -11,30 +11,30 @@ public class BootstrapBuilderController {
 
     public static String main(String header, Boolean footer,String title,String description,String keywords,String tw_linkImg,String card,String og_linkImg,String linkUrl){
         String codeText= "";
-       codeText+= new BootstrapBuilder(new Start()).run(new Start());
+       codeText = new BootstrapBuilder(new Start(codeText)).run(new Start(codeText));
 
         if((title!="") && (description!="") && (keywords!="")){
-           codeText+= new BootstrapBuilder(new Metatags(title, description, keywords)).run(new Metatags(title, description, keywords));
+           codeText = new BootstrapBuilder(new Metatags(title, description, keywords, codeText)).run(new Metatags(title, description, keywords, codeText));
         }
         if((title!="") && (description!="") && (card!="") && (tw_linkImg!="")) {
-           codeText+= new BootstrapBuilder(new MetaTwitter(title, description, tw_linkImg, card)).run(new MetaTwitter(title, description, tw_linkImg, card));
+           codeText = new BootstrapBuilder(new MetaTwitter(title, description, tw_linkImg, card, codeText)).run(new MetaTwitter(title, description, tw_linkImg, card, codeText));
         }
         if((title!="") && (description!="") && (linkUrl!="") && (og_linkImg!="")) {
-           codeText+= new BootstrapBuilder(new MetaOg(title, description, og_linkImg, linkUrl)).run(new MetaOg(title, description, og_linkImg, linkUrl));
+           codeText = new BootstrapBuilder(new MetaOg(title, description, og_linkImg, linkUrl, codeText)).run(new MetaOg(title, description, og_linkImg, linkUrl, codeText));
         }
-       codeText+= new BootstrapBuilder(new Middle()).run(new Middle());
+       codeText = new BootstrapBuilder(new Middle(codeText)).run(new Middle(codeText));
         if(header=="static"){
-           codeText+= new BootstrapBuilder(new Header()).run(new Header());
+           codeText = new BootstrapBuilder(new Header(codeText)).run(new Header(codeText));
         }
         if(header=="fixed"){
-           codeText+= new BootstrapBuilder(new Header()).run(new Header());
-           codeText+= new BootstrapBuilder(new FixedHeader()).run(new FixedHeader());
+           codeText = new BootstrapBuilder(new Header(codeText)).run(new Header(codeText));
+           codeText = new BootstrapBuilder(new FixedHeader(codeText)).run(new FixedHeader(codeText));
         }
-       codeText+= new BootstrapBuilder(new Object()).run(new Object());
+       codeText = new BootstrapBuilder(new Object(codeText)).run(new Object(codeText));
         if(footer) {
-           codeText+= new BootstrapBuilder(new Footer()).run(new Footer());
+           codeText = new BootstrapBuilder(new Footer(codeText)).run(new Footer(codeText));
         }
-       codeText+= new BootstrapBuilder(new End()).run(new End());
+       codeText = new BootstrapBuilder(new End(codeText)).run(new End(codeText));
 
         return codeText;
     }

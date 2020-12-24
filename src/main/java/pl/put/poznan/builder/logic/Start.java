@@ -1,63 +1,23 @@
 package pl.put.poznan.builder.logic;
 
 public class Start implements Page {
-    @Override
-    public String start(){
-        String s = "<!DOCTYPE html>\n<html>\n<head>\n<link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">\n" +
-                "<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>\n" +
-                "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script><style>\n" +
-                "\n" +
-                "\n" +
-                ".sticky {\n" +
-                "  position: fixed;\n" +
-                "  top: 0;\n" +
-                "  width: 100%;\n" +
-                "}\n" +
-                "\n" +
-                "</style>\n";
-        return s;
+    String code;
+
+    public Start(String code)
+    {
+        this.code = code;
     }
 
     @Override
-    public String simpleMeta() {
-      return "";
+    public String addSection(){
+        return code +   "<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "<head>\n\n"  +
+                "<meta charset=\"utf-8\">\n" +
+                "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
+                "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\">\n" +
+                "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n" +
+                "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js\"></script>\n" +
+                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\"></script> \n\n";
     }
-
-    @Override
-    public String twitterMeta(){
-        return "";
-    }
-
-    @Override
-    public String ogMeta() {
-        return "";
-    }
-
-    @Override
-    public String middle() {
-        return "";
-    }
-
-    @Override
-    public String header() {
-        return "";
-    }
-
-    @Override
-    public String fixed() {
-        return "";
-    }
-
-    @Override
-    public String paragraph() {
-        return "";
-    }
-
-    @Override
-    public String footer() {
-        return "";
-    }
-
-    @Override
-    public String end() { return ""; }
 }

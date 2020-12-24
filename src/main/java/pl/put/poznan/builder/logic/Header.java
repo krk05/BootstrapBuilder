@@ -1,32 +1,16 @@
 package pl.put.poznan.builder.logic;
 
 public class Header implements Page {
-    @Override
-    public String start(){ return ""; }
+    String code;
 
-    @Override
-    public String simpleMeta() {
-        return "";
+    public Header(String code)
+    {
+        this.code = code;
     }
 
     @Override
-    public String twitterMeta() {
-        return "";
-    }
-
-    @Override
-    public String ogMeta() {
-        return "";
-    }
-
-    @Override
-    public String middle() {
-        return "";
-    }
-
-    @Override
-    public String header() {
-        return "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark \" id=\"myHeader\">\n" +
+    public String addSection() {
+        return code +  "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark \" id=\"myHeader\">\n" +
                 "      <a class=\"navbar-brand\" href=\"#\">Navbar</a>\n" +
                 "      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
                 "        <span class=\"navbar-toggler-icon\"></span>\n" +
@@ -54,22 +38,4 @@ public class Header implements Page {
                 "      </div>\n" +
                 "    </nav>\n";
     }
-
-    @Override
-    public String fixed() {
-        return "";
-    }
-
-    @Override
-    public String paragraph() {
-        return "";
-    }
-
-    @Override
-    public String footer() {
-        return "";
-    }
-
-    @Override
-    public String end() { return ""; }
 }

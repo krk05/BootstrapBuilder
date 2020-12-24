@@ -1,49 +1,19 @@
 package pl.put.poznan.builder.logic;
 
 public class Object implements Page {
-    @Override
-    public String start(){return ""; }
+    String code;
 
-    @Override
-    public String simpleMeta() {
-        return "";
+    public Object(String code)
+    {
+        this.code = code;
     }
 
     @Override
-    public String twitterMeta() {
-        return "";
+    public String addSection() {
+        return code +   "<main>\n" +
+                "   <div class=\"container\">\n" +
+                "       GLOWNY AKAPIT\n" +
+                "   </div>\n" +
+                "</main>\n\n";
     }
-
-    @Override
-    public String ogMeta() {
-        return "";
-    }
-
-    @Override
-    public String middle() {
-        return "";
-    }
-
-    @Override
-    public String header() {
-        return "";
-    }
-
-    @Override
-    public String fixed() {
-        return ""; }
-
-    @Override
-    public String paragraph() {
-        return "<main>\n" +
-                "<div class=\"container\">GLOWNY paragraph</div></main>\n";
-    }
-
-    @Override
-    public String footer() {
-        return "";
-    }
-
-    @Override
-    public String end() { return ""; }
 }

@@ -10,18 +10,7 @@ public class BootstrapBuilder {
 
     public static String run(Page builder)
     {
-        String codeText = "";
-        codeText = codeText + builder.start();
-        codeText = codeText + builder.simpleMeta();
-        codeText = codeText + builder.twitterMeta();
-        codeText = codeText + builder.ogMeta();
-        codeText = codeText + builder.header();
-        codeText = codeText + builder.fixed();
-        codeText = codeText + builder.middle();
-        codeText = codeText + builder.paragraph();
-        codeText = codeText + builder.footer();
-        codeText = codeText + builder.end();
-        return codeText;
+        return builder.addSection();
     }
 }
 

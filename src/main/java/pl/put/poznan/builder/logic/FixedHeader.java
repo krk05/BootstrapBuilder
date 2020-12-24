@@ -1,37 +1,26 @@
 package pl.put.poznan.builder.logic;
 
 public class FixedHeader implements Page {
-    @Override
-    public String start(){return ""; }
 
-    @Override
-    public String simpleMeta() {
-        return "";
+    String code;
+
+    public FixedHeader(String code)
+    {
+        this.code = code;
     }
 
     @Override
-    public String twitterMeta(){
-        return "";
-    }
+    public String addSection() {
 
-    @Override
-    public String ogMeta() {
-        return "";
-    }
+        String htmlStickyClass =    "\n<style>\n" +
+                ".sticky {\n" +
+                "   position: fixed;\n" +
+                "   top: 0;\n" +
+                "   width: 100%;\n" +
+                "}\n" +
+                "</style>\n\n";
 
-    @Override
-    public String middle() {
-        return "";
-    }
-
-    @Override
-    public String header() {
-        return "";
-    }
-
-    @Override
-    public String fixed() {
-        return "<script>\n" +
+        String javascriptOnRollFunction =   "\n<script>\n" +
                 "window.onscroll = function() {myFunction()};\n" +
                 "\n" +
                 "var header = document.getElementById(\"myHeader\");\n" +
@@ -44,19 +33,15 @@ public class FixedHeader implements Page {
                 "    header.classList.remove(\"sticky\");\n" +
                 "  }\n" +
                 "}\n" +
-                "</script>\n";
-    }
+                "</script>\n\n";
 
-    @Override
-    public String paragraph() {
-        return "";
-    }
+        int index = code.indexOf("</head>");
 
-    @Override
-    public String footer() {
-        return "";
-    }
+        code =  code.substring(0, index) +
+                htmlStickyClass +
+                code.substring(index) +
+                javascriptOnRollFunction;
 
-    @Override
-    public String end() { return ""; }
+        return code;
+    }
 }
