@@ -42,7 +42,7 @@ public class BootstrapBuilderController {
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(
-            @RequestParam(value="header", defaultValue="") String header, //fixed or static
+            @RequestParam(value="header", defaultValue="static") String header, //fixed or static
             @RequestParam(value="footer", defaultValue="false") Boolean footer,
 
             @RequestParam(value="title", defaultValue="") String title,
