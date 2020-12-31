@@ -12,20 +12,26 @@ public class BootstrapBuilderController {
     public static String main(String header, Boolean footer,String title,String description,String keywords,String tw_linkImg,String card,String og_linkImg,String linkUrl){ String codeText= "";
        codeText = new BootstrapBuilder(new Start(codeText)).run(new Start(codeText));
 
-        if((title!="") && (description!="") && (keywords!="")){
+
+        if(!(title.equals("")) || !(description.equals("")) || !(keywords.equals(""))){
+
            codeText = new BootstrapBuilder(new Metatags(title, description, keywords, codeText)).run(new Metatags(title, description, keywords, codeText));
         }
-        if((title!="") && (description!="") && (card!="") && (tw_linkImg!="")) {
+
+        if(!(title.equals("")) || !(description.equals("")) || !(card.equals("")) || !(tw_linkImg.equals(""))) {
            codeText = new BootstrapBuilder(new MetaTwitter(title, description, tw_linkImg, card, codeText)).run(new MetaTwitter(title, description, tw_linkImg, card, codeText));
         }
-        if((title!="") && (description!="") && (linkUrl!="") && (og_linkImg!="")) {
+
+        if(!(title.equals("")) || !(description.equals("")) || !(linkUrl.equals("")) || !(og_linkImg.equals(""))) {
            codeText = new BootstrapBuilder(new MetaOg(title, description, og_linkImg, linkUrl, codeText)).run(new MetaOg(title, description, og_linkImg, linkUrl, codeText));
         }
        codeText = new BootstrapBuilder(new Middle(codeText)).run(new Middle(codeText));
-        if(header=="static"){
+
+        if(header.equals("static")){
            codeText = new BootstrapBuilder(new Header(codeText)).run(new Header(codeText));
         }
-        if(header=="fixed"){
+
+        if(header.equals("fixed")){
            codeText = new BootstrapBuilder(new Header(codeText)).run(new Header(codeText));
            codeText = new BootstrapBuilder(new FixedHeader(codeText)).run(new FixedHeader(codeText));
         }
@@ -41,7 +47,7 @@ public class BootstrapBuilderController {
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(
-            @RequestParam(value="header", defaultValue="static") String header, //fixed or static
+            @RequestParam(value="header", defaultValue="") String header, //fixed or static or null
             @RequestParam(value="footer", defaultValue="false") Boolean footer,
 
             @RequestParam(value="title", defaultValue="") String title,
@@ -53,10 +59,7 @@ public class BootstrapBuilderController {
             @RequestParam(value="card", defaultValue="") String card,
             @RequestParam(value="og_linkImg", defaultValue="") String og_linkImg,
             @RequestParam(value="linkUrl", defaultValue="") String linkUrl
-            /*
 
-            og rozdzielczosc
-             */
     ){
 
         // log the parameters
