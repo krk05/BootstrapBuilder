@@ -20,7 +20,7 @@ public class MetaOg implements Page {
     public String addSection() {
         return code + "<meta property=\"og:title\" content=\"" + this.title + "\">\n" +
                 "<meta property=\"og:description\" content=\"" + this.description + "\">\n" +
-                "<meta property=\"og:image\" content=\"" + this.image + ">\n" +
+                "<meta property=\"og:image\" content=\"" + this.image + "\">\n" +
                 "<meta property=\"og:url\" content=\"" + this.url + "\">\n\n";
     }
 }
