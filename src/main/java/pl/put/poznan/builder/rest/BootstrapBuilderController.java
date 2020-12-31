@@ -10,8 +10,7 @@ import pl.put.poznan.builder.logic.Object;
 public class BootstrapBuilderController {
 
     public static String main(String header, Boolean footer,String title,String description,String keywords,String tw_linkImg,String card,String og_linkImg,String linkUrl){ String codeText= "";
-       codeText = new BootstrapBuilder(new Start(codeText)).run(new Start(codeText));
-
+        codeText = new BootstrapBuilder(new Start(codeText)).run(new Start(codeText));
 
         if(!(title.equals("")) || !(description.equals("")) || !(keywords.equals(""))){
 
@@ -25,7 +24,8 @@ public class BootstrapBuilderController {
         if(!(title.equals("")) || !(description.equals("")) || !(linkUrl.equals("")) || !(og_linkImg.equals(""))) {
            codeText = new BootstrapBuilder(new MetaOg(title, description, og_linkImg, linkUrl, codeText)).run(new MetaOg(title, description, og_linkImg, linkUrl, codeText));
         }
-       codeText = new BootstrapBuilder(new Middle(codeText)).run(new Middle(codeText));
+
+        codeText = new BootstrapBuilder(new Middle(codeText)).run(new Middle(codeText));
 
         if(header.equals("static")){
            codeText = new BootstrapBuilder(new Header(codeText)).run(new Header(codeText));
@@ -35,11 +35,14 @@ public class BootstrapBuilderController {
            codeText = new BootstrapBuilder(new Header(codeText)).run(new Header(codeText));
            codeText = new BootstrapBuilder(new FixedHeader(codeText)).run(new FixedHeader(codeText));
         }
-       codeText = new BootstrapBuilder(new Object(codeText)).run(new Object(codeText));
+
+        codeText = new BootstrapBuilder(new Object(codeText)).run(new Object(codeText));
+
         if(footer) {
            codeText = new BootstrapBuilder(new Footer(codeText)).run(new Footer(codeText));
         }
-       codeText = new BootstrapBuilder(new End(codeText)).run(new End(codeText));
+
+        codeText = new BootstrapBuilder(new End(codeText)).run(new End(codeText));
 
         return codeText;
     }
@@ -49,11 +52,8 @@ public class BootstrapBuilderController {
     public String get(
             @RequestParam(value="header", defaultValue="") String header, //fixed or static or null
             @RequestParam(value="footer", defaultValue="false") Boolean footer,
-
             @RequestParam(value="title", defaultValue="") String title,
-
             @RequestParam(value="description", defaultValue="") String description,
-
             @RequestParam(value="keywords", defaultValue="") String keywords,
             @RequestParam(value="tw_linkImg", defaultValue="") String tw_linkImg,
             @RequestParam(value="card", defaultValue="") String card,
@@ -63,9 +63,15 @@ public class BootstrapBuilderController {
     ){
 
         // log the parameters
-
+        logger.debug(header);
+        //footer?
         logger.debug(title);
         logger.debug(description);
+        logger.debug(keywords);
+        logger.debug(tw_linkImg);
+        logger.debug(card);
+        logger.debug(og_linkImg);
+        logger.debug(linkUrl);
 
         return main(header,footer,title,description,keywords,tw_linkImg,card,og_linkImg,linkUrl);
     }
