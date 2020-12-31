@@ -9,8 +9,7 @@ import pl.put.poznan.builder.logic.Object;
 @RequestMapping("/bootstrap")
 public class BootstrapBuilderController {
 
-    public static String main(String header, Boolean footer,String title,String description,String keywords,String tw_linkImg,String card,String og_linkImg,String linkUrl){
-        String codeText= "";
+    public static String main(String header, Boolean footer,String title,String description,String keywords,String tw_linkImg,String card,String og_linkImg,String linkUrl){ String codeText= "";
        codeText = new BootstrapBuilder(new Start(codeText)).run(new Start(codeText));
 
         if((title!="") && (description!="") && (keywords!="")){

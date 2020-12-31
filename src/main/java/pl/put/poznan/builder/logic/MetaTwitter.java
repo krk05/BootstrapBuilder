@@ -21,7 +21,7 @@ public class MetaTwitter implements Page {
     public String addSection() {
         return code +   "<meta name=\"twitter:title\" content=\"" + this.title + "\">\n" +
                 "<meta name=\"twitter:description\" content=\"" + this.description + "\" >\n" +
-                "<meta name=\"twitter:image\" content=" + this.image + ">\n" +
-                "<meta name=\"twitter:card\" content=" + this.card + ">\n\n";
+                "<meta name=\"twitter:image\" content=\"" + this.image + "\">\n" +
+                "<meta name=\"twitter:card\" content=\"" + this.card + "\">\n\n";
     }
 }
