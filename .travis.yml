@@ -1,1 +1,19 @@
 language: java
+
+jobs:
+  include:
+    - stage: GitHub Release
+      script: skip
+      before_deploy:
+        - export GIT_TAG=1.0.$TRAVIS_BUILD_NUMBER
+        - mvn package
+      deploy:
+        provider: releases
+        token: $GITHUB_OAUTH
+        file:
+          - target/io-project-architecture-0.1.jar
+        edge: true
+        tag_name: $GIT_TAG
+        on:
+          tags: false
+          branch: main

@@ -1,3 +1,14 @@
-/Users/mochodek/Documents/Dydaktyka/Wyklady/IO/Laboratory classes/projekt/ioprojectarchitecture/src/main/java/pl/put/poznan/transformer/app/TextTransformerApplication.java
-/Users/mochodek/Documents/Dydaktyka/Wyklady/IO/Laboratory classes/projekt/ioprojectarchitecture/src/main/java/pl/put/poznan/transformer/logic/TextTransformer.java
-/Users/mochodek/Documents/Dydaktyka/Wyklady/IO/Laboratory classes/projekt/ioprojectarchitecture/src/main/java/pl/put/poznan/transformer/rest/TextTransformerController.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\FixedHeader.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\Footer.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\MetaTwitter.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\Object.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\rest\BootstrapBuilderController.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\app\BootstrapBuilderApplication.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\BootstrapBuilder.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\Middle.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\Header.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\Metatags.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\Start.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\End.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\MetaOg.java
+C:\Users\Den\Desktop\IO\BootstrapBuilder\src\main\java\pl\put\poznan\builder\logic\Page.java

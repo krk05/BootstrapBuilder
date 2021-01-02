@@ -1,0 +1,14 @@
+pl\put\poznan\builder\logic\Object.class
+pl\put\poznan\builder\logic\BootstrapBuilder.class
+pl\put\poznan\builder\logic\Header.class
+pl\put\poznan\builder\logic\Footer.class
+pl\put\poznan\builder\logic\Middle.class
+pl\put\poznan\builder\app\BootstrapBuilderApplication.class
+pl\put\poznan\builder\logic\MetaTwitter.class
+pl\put\poznan\builder\logic\End.class
+pl\put\poznan\builder\rest\BootstrapBuilderController.class
+pl\put\poznan\builder\logic\MetaOg.class
+pl\put\poznan\builder\logic\FixedHeader.class
+pl\put\poznan\builder\logic\Page.class
+pl\put\poznan\builder\logic\Start.class
+pl\put\poznan\builder\logic\Metatags.class
