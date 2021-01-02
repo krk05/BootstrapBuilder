@@ -1,79 +1,123 @@
 package pl.put.poznan.builder.rest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.*;
-import pl.put.poznan.builder.logic.*;
-import pl.put.poznan.builder.logic.Object;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import pl.put.poznan.builder.logic.BootstrapBuilder;
 
 @RestController
 @RequestMapping("/bootstrap")
 public class BootstrapBuilderController {
+    private static final Logger logger = LoggerFactory.getLogger(BootstrapBuilderController.class);
 
-    public static String main(String header, Boolean footer,String title,String description,String keywords,String tw_linkImg,String card,String og_linkImg,String linkUrl){ String codeText= "";
-        codeText = new BootstrapBuilder(new Start(codeText)).run(new Start(codeText));
+    public static String buildPage(String header, Boolean footer, String title, String description, String keywords, String tw_linkImg, String card, String og_linkImg, String linkUrl) {
 
-        if(!(title.equals("")) || !(description.equals("")) || !(keywords.equals(""))){
+        String loggerTmp;
+        String codeText = BootstrapBuilder.initPage();
 
-           codeText = new BootstrapBuilder(new Metatags(title, description, keywords, codeText)).run(new Metatags(title, description, keywords, codeText));
+        logger.info("Page build started");
+
+        if (!title.isEmpty() || !description.isEmpty() || !keywords.isEmpty()) {
+            codeText = BootstrapBuilder.addMetaTags(title, description, keywords, codeText);
+            loggerTmp = "OK";
+        } else loggerTmp = "SKIP";
+
+        logger.info("Meta tags: {}", loggerTmp);
+
+        if (!title.isEmpty() || !description.isEmpty() || !card.isEmpty() || !tw_linkImg.isEmpty()) {
+            codeText = BootstrapBuilder.addMetaTwitter(title, description, tw_linkImg, card, codeText);
+            loggerTmp = "OK";
+        } else loggerTmp = "SKIP";
+
+        logger.info("Meta twitter: {}", loggerTmp);
+
+        if (!title.isEmpty() || !description.isEmpty() || !linkUrl.isEmpty() || !og_linkImg.isEmpty()) {
+            codeText = BootstrapBuilder.addMetaOg(title, description, og_linkImg, linkUrl, codeText);
+            loggerTmp = "OK";
+        } else loggerTmp = "SKIP";
+
+        logger.info("Meta og: {}", loggerTmp);
+
+        codeText = BootstrapBuilder.addMiddle(codeText);
+
+        logger.info("Middle added");
+
+        if (header.equals("static")) {
+            codeText = BootstrapBuilder.addHeader(codeText);
+            loggerTmp = "Static";
+        } else if (header.equals("fixed")) {
+            codeText = BootstrapBuilder.addFixedHeader(codeText);
+            loggerTmp = "Fixed";
         }
+        else loggerTmp = "No";
 
-        if(!(title.equals("")) || !(description.equals("")) || !(card.equals("")) || !(tw_linkImg.equals(""))) {
-           codeText = new BootstrapBuilder(new MetaTwitter(title, description, tw_linkImg, card, codeText)).run(new MetaTwitter(title, description, tw_linkImg, card, codeText));
-        }
+        logger.info("{} header added", loggerTmp);
 
-        if(!(title.equals("")) || !(description.equals("")) || !(linkUrl.equals("")) || !(og_linkImg.equals(""))) {
-           codeText = new BootstrapBuilder(new MetaOg(title, description, og_linkImg, linkUrl, codeText)).run(new MetaOg(title, description, og_linkImg, linkUrl, codeText));
-        }
+        codeText = BootstrapBuilder.addObject(codeText);
 
-        codeText = new BootstrapBuilder(new Middle(codeText)).run(new Middle(codeText));
+        logger.info("Object added");
 
-        if(header.equals("static")){
-           codeText = new BootstrapBuilder(new Header(codeText)).run(new Header(codeText));
-        }
+        if (footer) {
+            codeText = BootstrapBuilder.addFooter(codeText);
+            loggerTmp = "OK";
+        } else loggerTmp = "SKIP";
 
-        if(header.equals("fixed")){
-           codeText = new BootstrapBuilder(new Header(codeText)).run(new Header(codeText));
-           codeText = new BootstrapBuilder(new FixedHeader(codeText)).run(new FixedHeader(codeText));
-        }
+        logger.info("Footer: {}", loggerTmp);
 
-        codeText = new BootstrapBuilder(new Object(codeText)).run(new Object(codeText));
+        codeText = BootstrapBuilder.closeTags(codeText);
 
-        if(footer) {
-           codeText = new BootstrapBuilder(new Footer(codeText)).run(new Footer(codeText));
-        }
-
-        codeText = new BootstrapBuilder(new End(codeText)).run(new End(codeText));
+        logger.info("Tags closed");
 
         return codeText;
     }
-    private static final Logger logger = LoggerFactory.getLogger(BootstrapBuilderController.class);
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(
-            @RequestParam(value="header", defaultValue="") String header, //fixed or static or null
-            @RequestParam(value="footer", defaultValue="false") Boolean footer,
-            @RequestParam(value="title", defaultValue="") String title,
-            @RequestParam(value="description", defaultValue="") String description,
-            @RequestParam(value="keywords", defaultValue="") String keywords,
-            @RequestParam(value="tw_linkImg", defaultValue="") String tw_linkImg,
-            @RequestParam(value="card", defaultValue="") String card,
-            @RequestParam(value="og_linkImg", defaultValue="") String og_linkImg,
-            @RequestParam(value="linkUrl", defaultValue="") String linkUrl
+            @RequestParam(value = "header", defaultValue = "") String header, //fixed or static or null
+            @RequestParam(value = "footer", defaultValue = "false") Boolean footer,
+            @RequestParam(value = "title", defaultValue = "") String title,
+            @RequestParam(value = "description", defaultValue = "") String description,
+            @RequestParam(value = "keywords", defaultValue = "") String keywords,
+            @RequestParam(value = "tw_linkImg", defaultValue = "") String tw_linkImg,
+            @RequestParam(value = "card", defaultValue = "") String card,
+            @RequestParam(value = "og_linkImg", defaultValue = "") String og_linkImg,
+            @RequestParam(value = "linkUrl", defaultValue = "") String linkUrl
 
-    ){
+    ) {
+        logger.info("Incoming GET request");
 
-        // log the parameters
-        logger.debug(header);
-        //footer?
-        logger.debug(title);
-        logger.debug(description);
-        logger.debug(keywords);
-        logger.debug(tw_linkImg);
-        logger.debug(card);
-        logger.debug(og_linkImg);
-        logger.debug(linkUrl);
+        logger.debug(
+                "Header: {}\nFooter: {}\nTitle: {}\nDescription: {}\n" +
+                        "Keywords: {}\ntw_linkImg: {}\n Card: {}\n og_linkImg: {}\nlinkUrl: {}",
+                header.isEmpty() ? "EMPTY" : header,
+                footer,
+                title.isEmpty() ? "EMPTY" : footer,
+                description.isEmpty() ? "EMPTY" : description,
+                keywords.isEmpty() ? "EMPTY" : keywords,
+                tw_linkImg.isEmpty() ? "EMPTY" : tw_linkImg,
+                card.isEmpty() ? "EMPTY" : card,
+                og_linkImg.isEmpty() ? "EMPTY" : og_linkImg,
+                linkUrl.isEmpty() ? "EMPTY" : linkUrl
+        );
 
-        return main(header,footer,title,description,keywords,tw_linkImg,card,og_linkImg,linkUrl);
+        String page = buildPage(
+                header,
+                footer,
+                title,
+                description,
+                keywords,
+                tw_linkImg,
+                card,
+                og_linkImg,
+                linkUrl
+        );
+
+        logger.info("Page build successful");
+
+        return page;
     }
 
 
