@@ -34,7 +34,7 @@ public class BootstrapBuilderController {
      * @return code of HTML page
      *
      */
-    public static String buildPage(String header, Boolean footer, String title, String description, String keywords, String tw_linkImg, String card, String og_linkImg, String linkUrl) {
+    public static String buildPage(String header, String footer, String title, String description, String keywords, String tw_linkImg, String card, String og_linkImg, String linkUrl) {
 
         String loggerTmp;
         String codeText = BootstrapBuilder.initPage();
