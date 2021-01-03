@@ -1,12 +1,25 @@
 package pl.put.poznan.builder.logic;
 
+/**
+ *  Implements the content of he beginning of HTML document to the HTML page's code
+ */
 public class Start implements Page {
     String code;
 
+    /**
+     * Class constructor
+     *
+     * @param code text of the HTML page's code
+     */
     public Start(String code) {
         this.code = code;
     }
 
+    /**
+     * Adds the start of HTML page's code to the final code
+     *
+     * @return code of HTML page
+     */
     @Override
     public String addSection() {
         return code + "<!DOCTYPE html>\n" +

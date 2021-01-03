@@ -8,6 +8,14 @@ public class Metatags implements Page {
     String keywords;
     String code;
 
+    /**
+     * Class constructor
+     *
+     * @param title         text of meta tag's title
+     * @param description   text of meta tag's description
+     * @param keywords      text of meta tag's keywords
+     * @param code          text of HTML page's code
+     */
     public Metatags(String title, String description, String keywords, String code) {
         this.title = title;
         this.description = description;
@@ -15,6 +23,11 @@ public class Metatags implements Page {
         this.code = code;
     }
 
+    /**
+     * Adds the meta tags to the code
+     *
+     * Returns code text of HTML page's code
+     */
     @Override
     public String addSection() {
         return code +   "<title>" + this.title + "</title>\n" +

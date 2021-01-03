@@ -1,13 +1,26 @@
 package pl.put.poznan.builder.logic;
 
+/**
+ * Implements the content of header to the HTML page's code
+ */
 public class Header implements Page {
     String code;
 
+    /**
+     * Class constructor
+     *
+     * @param code code of HTML page
+     */
     public Header(String code)
     {
         this.code = code;
     }
 
+    /**
+     * Adds to the code header's body section
+     *
+     * @return code of HTML page
+     */
     @Override
     public String addSection() {
         return code +  "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark \" id=\"myHeader\">\n" +

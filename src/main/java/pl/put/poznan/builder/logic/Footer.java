@@ -1,13 +1,25 @@
 package pl.put.poznan.builder.logic;
-
+/**
+ *  Implements the content of footer to the HTML page's code
+ */
 public class Footer implements Page {
     String code;
 
+    /**
+     * Class constructor
+     *
+     * @param code text of the HTML page's code
+     */
     public Footer(String code)
     {
         this.code = code;
     }
 
+    /**
+     * Adds to the code the code of footer
+     *
+     * @return code of HTML page
+     */
     @Override
     public String addSection() {
 

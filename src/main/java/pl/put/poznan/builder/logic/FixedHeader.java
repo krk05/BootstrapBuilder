@@ -1,14 +1,27 @@
 package pl.put.poznan.builder.logic;
 
+/**
+ *  Implements the content of fixed header to the HTML page's code
+ */
 public class FixedHeader implements Page {
 
     String code;
 
+    /**
+     * Class constructor
+     *
+     * @param code text of the HTML page's code
+     */
     public FixedHeader(String code)
     {
         this.code = code;
     }
 
+    /**
+     * Adds to code the section of fixed header
+     *
+     * @return code of HTML page
+     */
     @Override
     public String addSection() {
 
