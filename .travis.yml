@@ -6,6 +6,7 @@ jobs:
       script: skip
       before_deploy:
         - export GIT_TAG=1.0.$TRAVIS_BUILD_NUMBER
+        - mvn test -B
         - mvn package
       deploy:
         provider: releases
