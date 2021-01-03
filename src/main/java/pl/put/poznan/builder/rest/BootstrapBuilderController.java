@@ -81,7 +81,7 @@ public class BootstrapBuilderController {
 
         logger.info("Object added");
 
-        if (footer) {
+        if (footer.equals("true")) {
             codeText = BootstrapBuilder.addFooter(codeText);
             loggerTmp = "OK";
         } else loggerTmp = "SKIP";
@@ -114,7 +114,7 @@ public class BootstrapBuilderController {
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(
             @RequestParam(value = "header", defaultValue = "") String header, //fixed or static or null
-            @RequestParam(value = "footer", defaultValue = "false") Boolean footer,
+            @RequestParam(value = "footer", defaultValue = "false") String footer,
             @RequestParam(value = "title", defaultValue = "") String title,
             @RequestParam(value = "description", defaultValue = "") String description,
             @RequestParam(value = "keywords", defaultValue = "") String keywords,
@@ -130,7 +130,7 @@ public class BootstrapBuilderController {
                 "Header: {}\nFooter: {}\nTitle: {}\nDescription: {}\n" +
                         "Keywords: {}\ntw_linkImg: {}\n Card: {}\n og_linkImg: {}\nlinkUrl: {}",
                 header.isEmpty() ? "EMPTY" : header,
-                footer,
+                footer.isEmpty() ? "EMPTY" : footer,
                 title.isEmpty() ? "EMPTY" : footer,
                 description.isEmpty() ? "EMPTY" : description,
                 keywords.isEmpty() ? "EMPTY" : keywords,
