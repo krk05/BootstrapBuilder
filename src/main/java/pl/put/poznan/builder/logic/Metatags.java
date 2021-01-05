@@ -1,11 +1,24 @@
 package pl.put.poznan.builder.logic;
 
+/**
+ * Implements the content of the meta tags to the HTML page's code
+ */
 public class Metatags implements Page {
-
-
+    /**
+     *  stores the title of content
+     */
     String title;
+    /**
+     * stores the description of content
+     */
     String description;
+    /**
+     * stores the meta tag's keywords
+     */
     String keywords;
+    /**
+     * stores the code of HTML's page
+     */
     String code;
 
     /**

@@ -1,7 +1,7 @@
 package pl.put.poznan.builder.logic;
 
 /**
- * interface of HTML page
+ * Interface of HTML page
  */
 public interface Page {
     /**

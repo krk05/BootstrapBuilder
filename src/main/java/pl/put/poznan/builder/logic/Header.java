@@ -4,6 +4,9 @@ package pl.put.poznan.builder.logic;
  * Implements the content of header to the HTML page's code
  */
 public class Header implements Page {
+    /**
+     * stores the code of HTML's page
+     */
     String code;
 
     /**

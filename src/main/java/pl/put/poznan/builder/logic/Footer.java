@@ -3,6 +3,9 @@ package pl.put.poznan.builder.logic;
  *  Implements the content of footer to the HTML page's code
  */
 public class Footer implements Page {
+    /**
+     * stores the code of HTML's page
+     */
     String code;
 
     /**

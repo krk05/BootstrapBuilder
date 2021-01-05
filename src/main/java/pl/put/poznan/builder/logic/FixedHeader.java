@@ -4,7 +4,9 @@ package pl.put.poznan.builder.logic;
  *  Implements the content of fixed header to the HTML page's code
  */
 public class FixedHeader implements Page {
-
+    /**
+     * stores the code of HTML's page
+     */
     String code;
 
     /**

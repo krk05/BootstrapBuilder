@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.put.poznan.builder.logic.BootstrapBuilder;
 
 /**
- * Is responsible for building a HTML page's code
- *
+ * Director of builder template.
+ * Adopt the parameters from the user and
+ * decides which part of HTML page's code has to be called.
+ * Refers to BootstrapBuilder class
  */
 @RestController
 @RequestMapping("/bootstrap")
@@ -19,7 +21,7 @@ public class BootstrapBuilderController {
     private static final Logger logger = LoggerFactory.getLogger(BootstrapBuilderController.class);
 
     /**
-     * Creates a HTML page's code
+     * Adopt the parameters from the user.
      *
      * @param header        content of a HTML's header
      * @param footer        content of a HTML's footer
@@ -96,7 +98,7 @@ public class BootstrapBuilderController {
     }
 
     /**
-     * Returns a final String text of HTML page's code specified by user
+     * Decides which part of HTML page's code has to be called.
      *
      * @param header        content of a HTML's header
      * @param footer        content of a HTML's footer

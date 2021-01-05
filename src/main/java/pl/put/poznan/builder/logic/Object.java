@@ -1,9 +1,12 @@
 package pl.put.poznan.builder.logic;
 
 /**
- *  Implements the content of object to the HTML page's code
+ * Implements the content of object to the HTML page's code
  */
 public class Object implements Page {
+    /**
+     * stores the code of HTML's page
+     */
     String code;
 
     /**
@@ -17,7 +20,7 @@ public class Object implements Page {
     }
 
     /**
-     * Adds to code the object (div) to the code
+     * Adds to code the tag "main" with class "container" in section "body" to the code
      *
      * @return code of HTML page
      */

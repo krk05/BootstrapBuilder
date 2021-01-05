@@ -1,7 +1,9 @@
 package pl.put.poznan.builder.logic;
 
 /**
- *  Implements the content of he beginning of HTML document to the HTML page's code
+ * Implements the content of he beginning of HTML document to the HTML page's code
+ *
+ * @field code stores the code of HTML's page
  */
 public class Start implements Page {
     String code;

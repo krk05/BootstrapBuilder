@@ -1,9 +1,12 @@
 package pl.put.poznan.builder.logic;
 
 /**
- *  Implements the content of body closing section to the HTML page's code
+ * Implements the content of body closing section to the HTML page's code
  */
 public class End implements Page {
+    /**
+     * stores the code of HTML's page
+     */
     String code;
 
     /**

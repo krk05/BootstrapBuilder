@@ -4,6 +4,9 @@ package pl.put.poznan.builder.app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Main class for application
+ */
 
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.builder.rest"})
 public class BootstrapBuilderApplication {

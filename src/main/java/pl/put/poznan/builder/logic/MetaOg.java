@@ -4,11 +4,25 @@ package pl.put.poznan.builder.logic;
  * Implements the content of the open graph's meta tags to the HTML page's code
  */
 public class MetaOg implements Page {
-
+    /**
+     *  stores the title of content
+     */
     String title;
+    /**
+     * stores the description of content
+     */
     String description;
+    /**
+     * stores the URL of the image
+     */
     String image;
+    /**
+     * stores the canonical URL for your page
+     */
     String url;
+    /**
+     * stores the code of HTML's page
+     */
     String code;
 
     /**

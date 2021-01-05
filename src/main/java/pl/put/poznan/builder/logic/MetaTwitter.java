@@ -3,11 +3,25 @@ package pl.put.poznan.builder.logic;
  * Implements the content of twitter's meta tags to the HTML page's code
  */
 public class MetaTwitter implements Page {
-
+    /**
+     *  stores the title of content
+     */
     String title;
+    /**
+     * stores the description of content
+     */
     String description;
+    /**
+     * stores the URL of the image
+     */
     String image;
+    /**
+     * stores the key-value pair
+     */
     String card;
+    /**
+     * stores the code of HTML's page
+     */
     String code;
 
     /**
