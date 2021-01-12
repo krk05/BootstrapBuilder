@@ -12,7 +12,7 @@ jobs:
         provider: releases
         token: $GITHUB_OAUTH
         file:
-          - target/io-project-architecture-1.0.FINAL.jar
+          - target/io-project-architecture-2.0.FINAL.jar
         edge: true
         tag_name: $GIT_TAG
         on:
